@@ -1,0 +1,338 @@
+<meta name='viewport' content='width=device-width, initial-scale=1'/><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UKV-GLT</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+            color: #fff;
+            text-align: center;
+            animation: fadeIn 1.2s ease-in-out;
+        }
+
+        /* Header Animation */
+        .header {
+            background: dark;
+            padding: 15px;
+            font-size: 20px;
+            font-weight: bold;
+            text-transform: ;
+            letter-spacing: 1px;
+            border-bottom: 3px solid #ffcc00;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+            position: relative;
+            animation: slideDown 1s ease-in-out;
+        }
+
+        /* Page Container */
+        .container {
+            width: 90%;
+            max-width: 900px;
+            margin: 20px auto;
+            animation: fadeUp 1s ease-in-out;
+        }
+
+        /* Register Box */
+        .register-box {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease-in-out;
+        }
+        .register-box:hover {
+            transform: scale(1.02);
+        }
+
+        /* Register Button */
+        .register {
+            background: #ffcc00;
+            color: #333;
+            padding: 15px 25px;
+            font-size: 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 15px;
+            font-weight: bold;
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.4);
+            transition: 0.3s;
+        }
+        .register:hover {
+            background: #ffdd44;
+            transform: scale(1.05);
+        }
+
+        /* News Section */
+        .news {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 20px;
+            margin-top: 20px;
+            border-left: 5px solid #ffeb3b;
+            text-align: left;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .news:hover {
+            transform: scale(1.03);
+            box-shadow: 0px 6px 12px rgba(255, 255, 0, 0.5);
+        }
+        .news h3 {
+            color: #ffeb3b;
+            font-size: 22px;
+            margin-bottom: 10px;
+            text-align: left;
+        }
+        .news ul {
+            list-style: none;
+        }
+        .news li {
+            padding: 8px 0;
+            font-size: 16px;
+            transition: transform 0.3s;
+        }
+        .news li:hover {
+            transform: translateX(10px);
+            color: #ffeb3b;
+        }
+
+        /* Preparation Materials */
+        .prep-title {
+            text-align: left;
+            font-size: 22px;
+            font-weight: bold;
+            margin-top: 30px;
+            animation: fadeUp 1s ease-in-out;
+        }
+
+        /* Grid System */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        /* Card Animation & Hover Effects */
+        .card {
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            transition: transform 0.3s, box-shadow 0.3s;
+            animation: fadeUp 1s ease-in-out;
+        }
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 6px 12px rgba(255, 255, 255, 0.5);
+        }
+
+        /* Button Styles */
+        .btn {
+            padding: 8px 15px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+            text-decoration: none;
+            display: inline-block;
+            font-weight: bold;
+        }
+
+        /* Gradient Backgrounds for Cards */
+        .notes { background: linear-gradient(to right, #ff416c, #ff4b2b); }
+        .format { background: linear-gradient(to right, #00c6ff, #0072ff); }
+        .sample { background: linear-gradient(to right, #52c234, #061700); }
+        .pattern { background: linear-gradient(to right, #ff9a44, #fc6076); }
+        .syllabus { background: linear-gradient(to right, #00aeef, #2d388a); }
+        .subjects { background: linear-gradient(to right, #00e5ff, #1200ff); }
+
+        /* Button Colors */
+        .notes .btn { background: #b71c1c; color: white; }
+        .format .btn { background: #0d47a1; color: white; }
+        .sample .btn { background: #1b5e20; color: white; }
+        .pattern .btn { background: #e65100; color: white; }
+        .syllabus .btn { background: #2d388a; color: white; }
+        .subjects .btn { background: #2d388a; color: white; }
+}
+
+
+
+
+        /* Benefits Section */
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+            position: relative;
+        }
+        h2::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 4px;
+            background: var(--primary-color);
+            margin: 10px auto;
+            border-radius: 5px;
+        }
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .benefit-card {
+            background: #c3dcd8;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+        .benefit-card img {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 15px;
+        }
+        .benefit-card h3 {
+            color: #000080;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        .benefit-card p {
+            font-size: 0.95rem;
+            color: black;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            border-radius: 25px;
+            text-align: center;
+            font-size: 1rem;
+            margin: 20px auto;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.3s;
+        }
+        .cta-btn:hover {
+            background: linear-gradient(135deg, #0D47A1, var(--secondary-color));
+            transform: scale(1.05);
+        }
+
+
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-100px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">UKV Governance & Leadership Test<br>(UKV-GLT)</div>
+
+    <div class="container">
+        <div class="register-box">
+            <h2>Unlock Your Potential!</h2>
+            <p>"Success is where preparation and opportunity meet."</p>
+            <a href="#" class="register">Register Now</a>
+        </div>
+
+        <div class="news">
+            <h3>Latest News & Updates</h3>
+            <ul>
+                <li>-No Update</li>
+               
+              
+            </ul>
+        </div>
+
+        <div class="prep-title">Preparation Materials</div>
+        
+        <div class="grid">
+            <div class="card notes">Notes <br><a href="#" class="btn">Get</a></div>
+            <div class="card format">Format <br><a href="#" class="btn">Get</a></div>
+            <div class="card sample">Sample Papers <br><a href="#" class="btn">Get</a></div>
+            <div class="card pattern">Exam Pattern <br><a href="#" class="btn">Get</a></div>
+            <div class="card syllabus">Syllabus <br><a href="#" class="btn">Get</a></div>
+            <div class="card subjects">Subjects List <br><a href="#" class="btn">Get</a></div>
+        </div>
+
+
+<br>
+    <section>
+    <br>
+        <h2>UKV-GLT's Benefits</h2>
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <img src="https://tgt.data.blog/wp-content/uploads/2024/12/1000274924-removebg-preview.png" alt="Trophy Icon">
+                <h3>Certificate of Appreciation</h3>
+                <p>Top-performing students receive appreciation certificates.</p>
+            </div>
+            <div class="benefit-card">
+                <img src="https://cdn-icons-png.flaticon.com/512/6836/6836368.png" alt="Media Icon">
+                <h3>Media Features</h3>
+                <p>Toppers get featured in renowned media.</p>
+            </div>
+            <div class="benefit-card">
+                <img src="https://www.primco.ca/wp-content/uploads/2021/04/social-media-circle-icons-2.png" alt="Social Icon">
+                <h3>Social Media Recognition</h3>
+                <p>Toppers will be recognized across social media platforms.</p>
+            </div>
+            <div class="benefit-card">
+                <img src="https://tgt.data.blog/wp-content/uploads/2024/12/1000274928-removebg-preview.png" alt="Certificate Icon">
+                <h3>Participation Certificates</h3>
+                <p>All participants receive a participation certificate.</p>
+            </div>
+            <div class="benefit-card">
+                <img src="https://tgt.data.blog/wp-content/uploads/2024/12/1000274936-removebg-preview.png" alt="E-Magazine Icon">
+                <h3>E-Book Feature</h3>
+                <p>Toppers will be highlighted in our e-book.</p>
+            </div>
+            <div class="benefit-card">
+                <img src="https://cdn-icons-png.flaticon.com/512/7067/7067977.png" alt="School Icon">
+                <h3>Website Feature</h3>
+                <p>Topper details will be published with school names.</p>
+            </div>
+        </div>
+    </section>
+
+
+    </div>
+<br><br>
+<footer>
+<p>©UKV-GLT</p>
+</footer>
+<br>
+
+</body>
+</htm
